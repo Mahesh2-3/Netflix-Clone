@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="src/output.css">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    body {
+        background-color: #0a0a0a;
+    }
+
+    /* For Webkit Browsers (Chrome, Safari) */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* For Firefox */
+    html {
+        scrollbar-width: none;
+    }
+
+    /* For Edge/IE */
+    body {
+        -ms-overflow-style: none;
+    }
+
+    .box {
+        position: relative;
+    }
+
+    .movie {
+        height: 276px;
+        width: 197px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 0 20px 3px grey;
+    }
+
+    .number {
+        font-size: 120px;
+        left: -15px;
+        font-weight: bold;
+        position: absolute;
+        bottom: -30px;
+
+    }
+
+    .liboxes {
+        background: linear-gradient(300deg, rgb(172, 5, 205), purple, rgb(89, 0, 255), blue);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 10px 20px;
+        box-shadow: 0 0 20px 2px blue;
+
+    }
+
+    .liboxes div {
+        font-weight: bold;
+    }
+
+    .liboxes p {
+        color: rgb(151, 151, 151);
+        font-size: 18px;
+        font-weight: bold;
+        padding: 40px 0;
+    }
+
+    .gridbox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        ;
+        grid-template-rows: repeat(4, auto);
+        gap: 15px;
+        margin: 10px 0 40px 0;
+    }
+
+    .gridbox a {
+        color: #a5a5a5;
+        font-size: 14px;
+        text-underline-offset: 2px;
+        font-weight: 400;
+        display: flex;
+        justify-content: start;
+        text-decoration: underline;
+    }
+
+    @media (max-width:640px) {
+        .movie {
+            height: 200px;
+            width: 120px;
+        }
+    }
+</style>
+
+<body style="overflow-y: scroll; scrollbar-width:none;">
+    <div class="main h-[80vh] border-b-4  relative bg-transparent text-white"
+        style="background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/bfc0fc46-24f6-4d70-85b3-7799315c01dd/web/IN-en-20240923-TRIFECTA-perspective_74e21c19-980e-45ef-bd6c-78c1a6ce9381_large.jpg);">
+        <div class="cursor-pointer  w-full h-full inset-0 bg-black/65 z-[1]">
+            <div class="header1 w-[94%] h-[20%] z-10 flex mx-10 py-6 justify-around items-center">
+                <img class="w-28" src="images/logo.svg" alt="">
+                <div class="flex sm:flex-row flex-col  gap-4 items-center cursor-pointer ">
+                    <div
+                        class="bg-[rgb(15,15,15)] flex shadow-[0_0_13px_0] font-semibold text-lg bg-opacity-65 sm:h-[45px] h-[35px] text-[#bbb4b4]  border-[#1c1814] rounded-md px-3 py-1">
+                        <img class="sm:scale-[0.65]" src="images/lang.svg" alt="">
+                        <select class=" bg-[rgb(15,15,15)] outline-none border-none" name="language_selector"
+                            id="lang">
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                        </select>
+
+                    </div>
+                    <button
+                        class="text-white sm:h-[45px] h-[35px]  bg-[red] rounded-md px-7 font-semibold shadow-[0_0_15px_2px_red] text-lg py-1">Sign
+                        In</button>
+                </div>
+            </div>
+            <div class="h-[80%] flex justify-center items-center z-10  flex-col gap-4  w-full text-center px-8">
+                <div class="font-bold sm:text-6xl text-5xl mb-2 drop-shadow-[0px_0px_15px_yellow] ">Unlimited movies, TV
+                    shows and more
+                </div>
+                <div class="text-2xl font-semibold drop-shadow-[0px_0px_15px_yellow]">Starts at ₹149. Cancel at any
+                    time.</div>
+                <div class="text-2xl font-semibold drop-shadow-[0px_0px_15px_yellow]">Ready to watch? Enter your email
+                    to create or restart your
+                    membership.
+                </div>
+                <div class="my-10 flex sm:flex-row flex-col">
+                    <input
+                        class="w-[300px] h-[50px] rounded-[5px] pl-[10px] my-2 mx-1 bg-[#0a0a0a] shadow-[0_0_13px_0]  bg-opacity-85 font-bold"
+                        type="email" name="Email" id="" placeholder="Email Address">
+                    <button
+                        class="mx-2 my-3 shadow-[0_0_15px_2px_red] font-semibold bg-[red] py-2 px-4 h-[45px]  rounded-[5px]">Get
+                        Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=" 2xl:w-[60vw] xl:w-[70vw] px-11 lg:w-[80vw] w-[100vw] mx-auto">
+        <div class="main5 my-10">
+            <h1 class="text-3xl w-full mb-10 mx-auto font-bold">Trending Now</h1>
+            <div
+                class="flex  w-[100%] overflow-x-scroll sm:m-auto  h-[35vh]  sm:gap-10 gap-5 items-center overflow-y-hidden  ">
+                <div class="box">
+                    <div class="movie sm:ml-10 "
+                        style="background-repeat:contain; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcRx_aG6GwsTcJAfgzky5LFJFx9YWxEBizUqDwSx81YBu7YPyGAGn26xWU_ufbdDsDzIkpFi9UuxHqGqdF8eb2lDWBQq5ltTxlXMgpa21am_Ph-rLaRqW6jNoVC2D4qv8srv.webp?r=460);  ">
+                        <div class="number left-0">1
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWfy2dutSC-NUFIsVEL4sXZnsIQ6iXFjUo72Ser_euP_iWDiS4bbR8lAizk_LII7cmjhKIMsjZSDhEmbaPKbNpRCCWSb-MREKOI.webp?r=7a3); ">
+                        <div class="number">2</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABZpb1_hPsfkW_3W9d6rBB1Zgh2_-XSfOSbdNd5z2GuhB-MSvR5nrjXmmK6WCPPTBNk9oFIuhS9cQWtg0TiJqXBSkdu36d7LFbjkxdYFidG5niA2rk6R8YKmg7FuZ4Z9C98CQ.webp?r=cb7); ">
+                        <div class="number">3</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaSshv3B33Si7Inun2n3T_4GEedhNUGzYtVOJTOQ42_LM7zbc3lDrvE0GvjEwK_uQhEm70ZFyY2cGl9XLQ-oiVgXc7OngXzsDk0.webp?r=2b9); ">
+                        <div class="number">4</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWWCLODooJEzEC-s6h-mxyoF7uULkMgzZUNqk9b0DEQF1GbeFo7StAZhvQWgstxCx8fbQAH1A2AzORtdFuHoAcNds4DBdo2DCQRUsGQBai4fXbEQcyQ15UGZ2vDSg7K7JFpd.webp?r=e07); ">
+                        <div class="number">5</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWFI_bLQXYCaTHe0dVKy3aPWEUCDQuBP7KfgfxH55--QOm2i7x2HATp3sS_0rhR6kwn93AokrzcR0SrZRiz7JyMnt9Lp7vuhBuI.webp?r=a57); ">
+                        <div class="number">6</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcaxAOO875GJCdVuF0m1TZ3t7bpSuHTJByPn3R_IUKqnTVM3S9XmcC4-g-Ep1TblyvtA-xEjnx4TKXkxqIX8uBSLvyp-xQUUyfntLLUhwqlyTdsAomLuue-Df9gov2xymJYy.webp?r=62a); ">
+                        <div class="number">7</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUG-YTjEcnP-iDC_Pd6qjymOnEFKdZt74cgWpynYl_AaVBnSO-pJ2hNyXzydEETsKulxTJvSDC6bMv8hst6c-OPY2YsnqJRR_ac.webp?r=8c7); ">
+                        <div class="number">8</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABan_SGhmKkHRdUmhF-DzQueCFwl6Evtv-dxip0v6HWrmKRROq6ilCAybAeYA2L0_VOzAVI3YlP3AoQMKHJOiKmuJLUOL4ZpYxJc.webp?r=0f6); ">
+                        <div class="number">9</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="movie"
+                        style="background-repeat: no-repeat; background-image: url(https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABbAuyAAnMP5Cf2nC7VBtsHE9kF2cVG-fnamTUMegSuyaJg7BcKd1b80qXcCcfXM9axtoVJfs9ufL1l78pNwpysDv-aXnOIpP02xIerclNy-53K33cQZZ6pIklQLsjhGkcFhB.webp?r=71f); ">
+                        <div class="number left-[-30px]">10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main5 my-20 ">
+            <h1 class="text-3xl w-full mb-10 mx-auto font-bold">More reasons to join</h1>
+            <ol class="w-[100%]  flex gap-5 xl:flex-row flex-col justify-between items-center">
+                <li class="xl:w-[50%] w-full flex md:flex-row flex-col gap-5 h-full">
+
+                    <div class="liboxes xl:h-[330px] h-[250px] xl:w-[48%] w-[100%] ">
+                        <div class="md:text-xl text-2xl">Enjoy on your TV</div>
+                        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                    </div>
+                    <div class="liboxes xl:h-[330px] h-[250px] xl:w-[48%] w-[100%] ">
+                        <div class="md:text-xl text-2xl">Download your shows to watch offline</div>
+                        <p>Save your favourites easily and always have something to watch.</p>
+                    </div>
+                </li>
+                <li class="xl:w-[50%] w-full flex md:flex-row flex-col gap-5 h-full">
+                    <div class="liboxes xl:h-[330px] h-[250px] xl:w-[48%] w-[100%] ">
+                        <div class="md:text-xl text-2xl">Watch everywhere</div>
+                        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+                    </div>
+                    <div class="liboxes xl:h-[330px] h-[250px] xl:w-[48%] w-[100%] ">
+                        <div class="md:text-xl text-2xl">Create profiles for kids</div>
+                        <p>Send kids on adventures with their favourite characters in a space made just for them free
+                            with your membership.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="main6">
+            <h1 class="text-4xl w-full mb-10 mx-auto font-bold">Frequently Asked Questions</h1>
+            <ul class="flex flex-col gap-3">
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>What is Netflix?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>How much does Netflix cost?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>Where can i watch?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>How do i cancel?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>What can i watch on Netflix?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+                <li
+                    class="cursor-pointer shadow-[0_0_10px_0] w-full flex justify-between items-center h-[90px] bg-[#0a0a0a] transition-all duration-500 ease-in-out sm:text-2xl text-xl sm:px-8 px-3 hover:bg-[rgb(72,72,72)]">
+                    <div>Is Netflix good for kids?</div>
+                    <div class="sm:text-5xl text-3xl">+</div>
+                </li>
+            </ul>
+
+        </div>
+        <div class="min-w-full py-10 my-10 flex flex-col items-center gap-6">
+            <div class="text-base text-center">Ready to watch? Enter your email to create or restart your
+                membership.
+            </div>
+            <div class="w-[100%] px-11 flex md:flex-row flex-col items-center justify-center">
+                <input
+                    class="sm:w-[480px] w-[340px]   text-lg shadow-[0_0_13px_0] h-[60px] rounded-[5px] pl-[10px] my-2 mx-1 bg-[#35312f]  bg-opacity-85 font-bold"
+                    type="email" name="Email" id="" placeholder="Email Address">
+                <button
+                    class="mx-2 md:w-[200px] sm:w-[480px] w-[340px]  my-3 text-xl font-semibold bg-[red] py-2 px-4 h-[55px] shadow-[0_0_15px_2px_red] hover:bg-[#b72828] rounded-[5px]">Get
+                    Started ></button>
+            </div>
+        </div>
+        <div class="">
+            <div class="text-[#a5a5a5]">Questions? Call <a href="/">000-800-919-1694</a></div>
+            <div class="gridbox">
+                <a href="/">FAQ</a>
+                <a href="/">Help Centre</a>
+                <a href="/">Account</a>
+                <a href="/">Media Centre</a>
+                <a href="/">Investor Relations</a>
+                <a href="/">Jobs</a>
+                <a href="/">Ways to Watch</a>
+                <a href="/">Terms of Use</a>
+                <a href="/">Privacy</a>
+                <a href="/">Cookie Preferences</a>
+                <a href="/">Corporate Information</a>
+                <a href="/">Contact Us</a>
+                <a href="/">Speed Test</a>
+                <a href="/">Legal Notices</a>
+                <a href="/">Only on Netflix</a>
+            </div>
+        </div>
+        <div class="main10">
+            <select
+                class="bg-[rgb(15,15,15)] bg-opacity-65 h-[35px] text-white border border-[#a5a5a5] shadow-[0px_0px_13px_0_white] rounded-md px-3 py-1"
+                name="language_selector" id="lang">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+            <div class="text-[14px] text-[#a5a5a5] mb-[60px] mt-10 font-normal">
+                Netflix India
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
